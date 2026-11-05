@@ -13,8 +13,11 @@ Proyecto final de laboratorio que implementa múltiples canales de comunicación
 ## Requisitos de instalación
 1. Clonar el repositorio.
 2. Ejecutar `composer install` y `npm install`.
-3. Copiar el archivo `.env.example` a `.env` y agregar la línea: `GRPC_INTERNAL_KEY=clave-local-larga-de-prueba`.
-4. Ejecutar `php artisan migrate`.
+3. Copiar el archivo `.env.example` a `.env` (en Windows: `copy .env.example .env`).
+4. Generar la clave de la aplicación: `php artisan key:generate`.
+5. Agregar la variable `GRPC_INTERNAL_KEY=clave-local-larga-de-prueba` en su archivo `.env` local (esta variable es necesaria para el correcto funcionamiento del servicio gRPC).
+6. Crear la base de datos SQLite: `New-Item -Path "database\database.sqlite" -ItemType File` (o simplemente crear el archivo vacío).
+7. Ejecutar las migraciones: `php artisan migrate`..
 
 ## Cómo ejecutar el proyecto
 Se necesitan varias terminales:
